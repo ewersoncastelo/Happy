@@ -1,12 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, View } from 'react-native';
+
+import MapView from 'react-native-maps';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <MapView 
+        style={styles.map} 
+        initialRegion={{
+          latitude: -11.9341827,
+          longitude: -61.9931026,
+          longitudeDelta: 0.008,
+          latitudeDelta: 0.008,
+        }}
+      />
     </View>
   );
 }
@@ -14,8 +22,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+
+  map: {
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+  }
 });

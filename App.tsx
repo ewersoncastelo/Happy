@@ -2,12 +2,24 @@ import React from 'react';
 import { Dimensions, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
 import MapView, { Marker, Callout, PROVIDER_GOOGLE } from 'react-native-maps';
+import { Feather } from '@expo/vector-icons';
+
+import { useFonts } from 'expo-font';
+import { Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold } from '@expo-google-fonts/nunito';
 
 import mapMaker from './src/images/map_marker.png'
 
-import { Feather } from '@expo/vector-icons';
-
 export default function App() {
+  const [fontsLoad] = useFonts({
+    Nunito_600SemiBold, 
+    Nunito_700Bold, 
+    Nunito_800ExtraBold
+  });
+
+  if(!fontsLoad){
+    return null
+  }
+
   return (
     <View style={styles.container}>
       <MapView 

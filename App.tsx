@@ -24,9 +24,15 @@ export default function App() {
             latitude: -11.9341827,
             longitude: -61.9931026,
           }}
+          calloutAnchor={{
+            x: 2.4,
+            y: 0.2,
+          }}
         >
-          <Callout>
-            <Text>Lar das Meninas</Text>
+          <Callout tooltip={true} onPress={()=>{}}>
+            <View style={styles.calloutView}>
+              <Text style={styles.calloutText}>Lar das Meninas</Text>
+            </View>
           </Callout>
         </Marker>
       </MapView>
@@ -42,5 +48,19 @@ const styles = StyleSheet.create({
   map: {
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
+  },
+
+  calloutView:{
+    width: 160,
+    height: 46,
+    paddingHorizontal: 16,
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    borderRadius: 16,
+    justifyContent: 'center',
+  },
+
+  calloutText: {
+    color: '#0089a5',
+    fontSize: 14,
   }
 });

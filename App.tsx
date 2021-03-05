@@ -88,6 +88,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+
+    // For Android Shadow
+    elevation: 3,
+
+    // For iOS Shadow
+    shadowOffset: {width: 0, height: 5},
+    shadowColor: '#000',
+    shadowOpacity: 0.5,
+    shadowRadius: 1,
   },
 
   footerText: {
